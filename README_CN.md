@@ -184,6 +184,21 @@ ByteDance Api Url.
 
 讯飞星火Api Secret.
 
+### `CHATGLM_API_KEY` (可选)
+
+ChatGLM Api Key.
+
+### `CHATGLM_URL` (可选)
+
+ChatGLM Api Url.
+
+### `DEEPSEEK_API_KEY` (可选)
+
+DeepSeek Api Key.
+
+### `DEEPSEEK_URL` (可选)
+
+DeepSeek Api Url.
 
 
 ### `HIDE_USER_API_KEY` （可选）
@@ -216,9 +231,9 @@ ByteDance Api Url.
 
 用来控制模型列表，使用 `+` 增加一个模型，使用 `-` 来隐藏一个模型，使用 `模型名=展示名` 来自定义模型的展示名，用英文逗号隔开。
 
-在Azure的模式下，支持使用`modelName@azure=deploymentName`的方式配置模型名称和部署名称(deploy-name)
-> 示例：`+gpt-3.5-turbo@azure=gpt35`这个配置会在模型列表显示一个`gpt35(Azure)`的选项。
-> 如果你只能使用Azure模式，那么设置 `-all,+gpt-3.5-turbo@azure=gpt35` 则可以让对话的默认使用 `gpt35(Azure)`
+在Azure的模式下，支持使用`modelName@Azure=deploymentName`的方式配置模型名称和部署名称(deploy-name)
+> 示例：`+gpt-3.5-turbo@Azure=gpt35`这个配置会在模型列表显示一个`gpt35(Azure)`的选项。
+> 如果你只能使用Azure模式，那么设置 `-all,+gpt-3.5-turbo@Azure=gpt35` 则可以让对话的默认使用 `gpt35(Azure)`
 
 在ByteDance的模式下，支持使用`modelName@bytedance=deploymentName`的方式配置模型名称和部署名称(deploy-name)
 > 示例: `+Doubao-lite-4k@bytedance=ep-xxxxx-xxx`这个配置会在模型列表显示一个`Doubao-lite-4k(ByteDance)`的选项
@@ -227,6 +242,13 @@ ByteDance Api Url.
 ### `DEFAULT_MODEL` （可选）
 
 更改默认模型
+
+### `VISION_MODELS` (可选)
+
+> 默认值：空
+> 示例：`gpt-4-vision,claude-3-opus,my-custom-model` 表示为这些模型添加视觉能力，作为对默认模式匹配的补充（默认会检测包含"vision"、"claude-3"、"gemini-1.5"等关键词的模型）。
+
+在默认模式匹配之外，添加更多具有视觉能力的模型。多个模型用逗号分隔。
 
 ### `DEFAULT_INPUT_TEMPLATE` （可选）
 
@@ -263,6 +285,9 @@ BASE_URL=https://b.nextweb.fun/api/proxy
 3. 如果你想本地部署，请使用 `yarn install && yarn build && yarn start` 命令，你可以配合 pm2 来守护进程，防止被杀死，详情询问 ChatGPT。
 
 ## 部署
+
+### 宝塔面板部署
+> [简体中文 > 如何通过宝塔一键部署](./docs/bt-cn.md)
 
 ### 容器部署 （推荐）
 

@@ -207,8 +207,8 @@ ByteDance API の URL。
 
 モデルリストを管理します。`+` でモデルを追加し、`-` でモデルを非表示にし、`モデル名=表示名` でモデルの表示名をカスタマイズし、カンマで区切ります。
 
-Azure モードでは、`modelName@azure=deploymentName` 形式でモデル名とデプロイ名（deploy-name）を設定できます。
-> 例：`+gpt-3.5-turbo@azure=gpt35` この設定でモデルリストに `gpt35(Azure)` のオプションが表示されます。
+Azure モードでは、`modelName@Azure=deploymentName` 形式でモデル名とデプロイ名（deploy-name）を設定できます。
+> 例：`+gpt-3.5-turbo@Azure=gpt35` この設定でモデルリストに `gpt35(Azure)` のオプションが表示されます。
 
 ByteDance モードでは、`modelName@bytedance=deploymentName` 形式でモデル名とデプロイ名（deploy-name）を設定できます。
 > 例: `+Doubao-lite-4k@bytedance=ep-xxxxx-xxx` この設定でモデルリストに `Doubao-lite-4k(ByteDance)` のオプションが表示されます。
@@ -216,6 +216,13 @@ ByteDance モードでは、`modelName@bytedance=deploymentName` 形式でモデ
 ### `DEFAULT_MODEL` （オプション）
 
 デフォルトのモデルを変更します。
+
+### `VISION_MODELS` (オプション)
+
+> デフォルト：空
+> 例：`gpt-4-vision,claude-3-opus,my-custom-model` は、これらのモデルにビジョン機能を追加します。これはデフォルトのパターンマッチング（"vision"、"claude-3"、"gemini-1.5"などのキーワードを含むモデルを検出）に加えて適用されます。
+
+デフォルトのパターンマッチングに加えて、追加のモデルにビジョン機能を付与します。複数のモデルはカンマで区切ります。
 
 ### `DEFAULT_INPUT_TEMPLATE` （オプション）
 
